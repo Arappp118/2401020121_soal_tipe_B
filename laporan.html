@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Laporan UTS Praktikum Pemrograman Web - Ridho Ramadani</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #111;
+  }
+  h1, h2, h3, h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f172a;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  h1 { font-size: 16pt; text-align: center; line-height: 1.3; }
+  h2 { font-size: 13pt; border-bottom: 1.5pt solid #0f172a; padding-bottom: 3pt; margin-top: 18pt; }
+  h3 { font-size: 11.5pt; margin-top: 10pt; }
+  p { margin: 4pt 0 6pt 0; text-align: justify; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8pt 0 12pt 0;
+    font-size: 9.5pt;
+  }
+  th, td {
+    border: 1px solid #334155;
+    padding: 5pt 7pt;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f1f5f9;
+    font-weight: bold;
+    color: #0f172a;
+  }
+  .badge-pass {
+    font-weight: bold;
+    color: #166534;
+  }
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 9.5pt;
+    background-color: #f1f5f9;
+    padding: 1pt 3pt;
+    border-radius: 2pt;
+  }
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8.5pt;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 8pt;
+    border-radius: 4pt;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.35;
+  }
+  .img-container {
+    text-align: center;
+    margin: 10pt 0 14pt 0;
+    page-break-inside: avoid;
+  }
+  .img-container img {
+    max-width: 95%;
+    height: auto;
+    border: 1px solid #94a3b8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .img-caption {
+    font-size: 9pt;
+    font-style: italic;
+    color: #475569;
+    margin-top: 4pt;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+  .header-box {
+    text-align: center;
+    border-bottom: 3px double #0f172a;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+  .info-table {
+    width: 100%;
+    margin-bottom: 16pt;
+  }
+  .info-table td {
+    border: none;
+    padding: 2pt 4pt;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-box">
+  <h3 style="margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Kementerian Pendidikan Tinggi, Sains, dan Teknologi</h3>
+  <h3 style="margin: 2pt 0; text-transform: uppercase; font-weight: bold;">Universitas Maritim Raja Ali Haji</h3>
+  <h4 style="margin: 0; font-weight: normal;">Fakultas Teknik dan Teknologi Kemaritiman &bull; Jurusan Teknik Informatika</h4>
+  <p style="margin: 4pt 0 0 0; font-size: 9pt; text-align: center; color: #475569;">Jl. Politeknik, Senggarang, Kota Tanjungpinang, Kepulauan Riau</p>
+</div>
+
+<h1>LAPORAN PRAKTIKUM PEMROGRAMAN WEB<br>UJIAN TENGAH SEMESTER (UTS) SEMESTER GANJIL</h1>
+
+<table class="info-table">
+  <tr>
+    <td width="20%"><strong>Mata Kuliah</strong></td>
+    <td width="2%">:</td>
+    <td width="38%">Praktikum Pemrograman Web (INF11197)</td>
+    <td width="18%"><strong>Nama Mahasiswa</strong></td>
+    <td width="2%">:</td>
+    <td width="20%"><strong>Ridho Ramadani</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Paket / Tipe Soal</strong></td>
+    <td>:</td>
+    <td><strong>Paket 2 — Tipe B</strong></td>
+    <td><strong>NIM</strong></td>
+    <td>:</td>
+    <td><strong>2401020121</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Judul Aplikasi</strong></td>
+    <td>:</td>
+    <td><strong>Sistem Peminjaman Alat Laboratorium</strong></td>
+    <td><strong>Kelas / Semester</strong></td>
+    <td>:</td>
+    <td>E / V (Lima)</td>
+  </tr>
+  <tr>
+    <td><strong>Basis Data</strong></td>
+    <td>:</td>
+    <td>peminjaman_alat_2401020121</td>
+    <td><strong>Dosen Pengampu</strong></td>
+    <td>:</td>
+    <td>Berta Erwin S., M.Kom. / M. Radzi R., M.Cs. / Nolan E., M.Kom.</td>
+  </tr>
+</table>
+
+<hr style="border: 0.5pt solid #cbd5e1;">
+
+<h2>1. Pendahuluan dan Tujuan Praktikum</h2>
+<p>
+Ujian Tengah Semester (UTS) Praktikum Pemrograman Web bertujuan untuk mengukur capaian pembelajaran mahasiswa (CPMK091 dan CPMK092) dalam merancang dan mengembangkan aplikasi web dinamis berbasis Laravel dan basis data relasional MariaDB/MySQL. Pengerjaan dilakukan secara individual dengan berpedoman pada materi praktikum Modul 1 sampai Modul 7.
+</p>
+<p>
+Pada <strong>Paket 2 Tipe B</strong>, studi kasus yang diselesaikan adalah <strong>Sistem Peminjaman Alat Laboratorium</strong>. Sistem ini mengelola pencatatan transaksi peminjaman alat inventaris laboratorium kampus. Aplikasi wajib mendukung operasi CRUD (Create, Read, Update, Delete) lengkap, pencarian data multi-kolom, filter data berdasarkan master alat, validasi data masukan secara ketat di sisi server (server-side validation), sanitasi data string, pencegahan duplikasi data unik, serta penanganan kesalahan database yang aman menggunakan koneksi PDO langsung (PHP Data Objects).
+</p>
+
+<h2>2. Analisis Kasus dan Kebutuhan Sistem</h2>
+<p>
+Laboratorium kampus memerlukan sistem digital untuk mendata peminjaman alat agar pencatatan barang tidak terjadi secara tumpang tindih. Pengguna sistem (petugas lab) membutuhkan fasilitas untuk:
+</p>
+<ul>
+  <li>Mencatat peminjaman alat baru dengan data lengkap (kode transaksi, nama peminjam, nomor identitas peminjam, jumlah alat yang dipinjam, dan pilihan alat).</li>
+  <li>Melihat daftar seluruh riwayat peminjaman beserta informasi detail nama alat dan indikator klasifikasi jumlah pinjaman (Banyak / Sedikit).</li>
+  <li>Memperbarui data transaksi peminjaman apabila terjadi kekeliruan pencatatan.</li>
+  <li>Menghapus rekaman transaksi yang telah dibatalkan atau selesai diproses.</li>
+  <li>Mencari data peminjaman berdasarkan kata kunci pada kode peminjaman, nama peminjam, atau nomor identitas peminjam.</li>
+  <li>Memfilter tampilan daftar hanya untuk jenis alat laboratorium tertentu.</li>
+</ul>
+
+<h2>3. Perancangan Basis Data dan Skema Relasi</h2>
+<p>
+Sistem dirancang secara tepat menggunakan dua tabel berelasi satu-ke-banyak (<em>one-to-many</em>) dengan mesin penyimpanan <code>InnoDB</code>:
+</p>
+
+<h3>3.1. Tabel Master: <code>alat</code></h3>
+<p>Tabel master ini menampung daftar referensi alat yang tersedia di laboratorium.</p>
+<table>
+  <tr>
+    <th width="20%">Nama Kolom</th>
+    <th width="25%">Tipe Data & Atribut</th>
+    <th width="15%">Constraint</th>
+    <th width="40%">Keterangan</th>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td>BIGINT UNSIGNED</td>
+    <td>PRIMARY KEY, AUTO_INCREMENT</td>
+    <td>Identifikator unik alat laboratorium.</td>
+  </tr>
+  <tr>
+    <td><code>nama_alat</code></td>
+    <td>VARCHAR(100)</td>
+    <td>NOT NULL, UNIQUE</td>
+    <td>Nama alat (misal: Kamera, Proyektor). Tidak boleh ada duplikasi nama.</td>
+  </tr>
+</table>
+
+<h3>3.2. Tabel Transaksi: <code>peminjaman_alat</code></h3>
+<p>Tabel transaksi ini menyimpan detail transaksi peminjaman yang dilakukan mahasiswa.</p>
+<table>
+  <tr>
+    <th width="20%">Nama Kolom</th>
+    <th width="25%">Tipe Data & Atribut</th>
+    <th width="15%">Constraint</th>
+    <th width="40%">Keterangan</th>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td>BIGINT UNSIGNED</td>
+    <td>PRIMARY KEY, AUTO_INCREMENT</td>
+    <td>Identifikator unik transaksi peminjaman.</td>
+  </tr>
+  <tr>
+    <td><code>kode_peminjaman</code></td>
+    <td>CHAR(10)</td>
+    <td>NOT NULL, UNIQUE</td>
+    <td>Kode unik transaksi 10 karakter alfanumerik (contoh: PM00000001).</td>
+  </tr>
+  <tr>
+    <td><code>nama_peminjam</code></td>
+    <td>VARCHAR(100)</td>
+    <td>NOT NULL</td>
+    <td>Nama lengkap peminjam alat (panjang 3 - 100 karakter).</td>
+  </tr>
+  <tr>
+    <td><code>nomor_identitas</code></td>
+    <td>VARCHAR(30)</td>
+    <td>NOT NULL, UNIQUE</td>
+    <td>Nomor identitas unik mahasiswa (panjang 5 - 30 karakter).</td>
+  </tr>
+  <tr>
+    <td><code>jumlah_alat</code></td>
+    <td>TINYINT UNSIGNED</td>
+    <td>NOT NULL, CHECK</td>
+    <td>Jumlah unit alat yang dipinjam. Dibatasi CHECK (jumlah_alat BETWEEN 1 AND 10).</td>
+  </tr>
+  <tr>
+    <td><code>alat_id</code></td>
+    <td>BIGINT UNSIGNED</td>
+    <td>NOT NULL, FOREIGN KEY</td>
+    <td>Merujuk ke <code>alat(id)</code> dengan ON UPDATE CASCADE ON DELETE RESTRICT.</td>
+  </tr>
+  <tr>
+    <td><code>created_at</code></td>
+    <td>TIMESTAMP</td>
+    <td>NULL</td>
+    <td>Waktu rekaman transaksi dibuat.</td>
+  </tr>
+  <tr>
+    <td><code>updated_at</code></td>
+    <td>TIMESTAMP</td>
+    <td>NULL</td>
+    <td>Waktu rekaman transaksi terakhir diperbarui.</td>
+  </tr>
+</table>
+
+<h3>3.3. Relasi dan Integritas Referensial</h3>
+<p>
+Relasi yang terbentuk adalah <strong>One-to-Many</strong> dari tabel <code>alat</code> ke <code>peminjaman_alat</code> (satu jenis alat dapat dipinjam dalam banyak transaksi peminjaman).
+Constraint integritas referensial yang diterapkan:
+</p>
+<ul>
+  <li><code>ON UPDATE CASCADE</code>: Jika ID alat di tabel master mengalami perubahan, seluruh rekaman pada transaksi peminjaman yang merujuknya akan otomatis terbarui secara konsisten.</li>
+  <li><code>ON DELETE RESTRICT</code>: Mencegah penghapusan rekaman alat pada tabel master jika alat tersebut masih tercatat digunakan pada tabel transaksi peminjaman. Hal ini menjaga integritas data laboratorium.</li>
+  <li><code>CHECK (jumlah_alat BETWEEN 1 AND 10)</code>: Menjamin di level basis data bahwa kuantitas peminjaman berada pada rentang logis 1 hingga 10 unit.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>4. Perancangan Routing dan Antarmuka (Blade & HTML Sederhana)</h2>
+<p>
+Seluruh route dirancang dengan mematuhi kaidah arsitektur RESTful Laravel dan menggunakan HTTP Method Spoofing untuk aksi pembaruan (<code>PUT</code>) dan penghapusan (<code>DELETE</code>):
+</p>
+<table>
+  <tr>
+    <th width="15%">Method</th>
+    <th width="25%">URI Route</th>
+    <th width="25%">Nama Route</th>
+    <th width="35%">Tindakan Controller / Aksi</th>
+  </tr>
+  <tr>
+    <td><code>GET</code></td>
+    <td><code>/</code></td>
+    <td>-</td>
+    <td>Redirect otomatis ke <code>/peminjaman</code>.</td>
+  </tr>
+  <tr>
+    <td><code>GET</code></td>
+    <td><code>/peminjaman</code></td>
+    <td><code>peminjaman.index</code></td>
+    <td>Menampilkan form tambah, form pencarian & filter, serta tabel seluruh data.</td>
+  </tr>
+  <tr>
+    <td><code>POST</code></td>
+    <td><code>/peminjaman</code></td>
+    <td><code>peminjaman.store</code></td>
+    <td>Sanitasi input, validasi server-side, cek duplikat, dan simpan via PDO.</td>
+  </tr>
+  <tr>
+    <td><code>GET</code></td>
+    <td><code>/peminjaman/{id}/edit</code></td>
+    <td><code>peminjaman.edit</code></td>
+    <td>Menampilkan form ubah data terisi nilai record lama.</td>
+  </tr>
+  <tr>
+    <td><code>PUT</code></td>
+    <td><code>/peminjaman/{id}</code></td>
+    <td><code>peminjaman.update</code></td>
+    <td>Memperbarui rekaman data dengan proteksi konflik unik data lain.</td>
+  </tr>
+  <tr>
+    <td><code>DELETE</code></td>
+    <td><code>/peminjaman/{id}</code></td>
+    <td><code>peminjaman.destroy</code></td>
+    <td>Menghapus data peminjaman terpilih berdasarkan ID.</td>
+  </tr>
+</table>
+
+<p>
+<strong>Kepatuhan Aturan Tampilan:</strong> Sesuai instruksi teknis bersama, seluruh tampilan antarmuka (<code>index.blade.php</code> dan <code>edit.blade.php</code>) dibangun <strong>murni menggunakan HTML semantik dan Blade</strong> tanpa menggunakan Bootstrap, Tailwind, jQuery, JavaScript eksternal, maupun inline style. Elemen dasar seperti tabel bergaris (<code>&lt;table border="1"&gt;</code>), form input, select box, label, dan tombol submit digunakan secara optimal.
+</p>
+
+<h2>5. Penerapan Koneksi PDO dan Keamanan Basis Data</h2>
+<p>
+Sesuai instruksi ujian, akses basis data <strong>wajib menggunakan PDO melalui koneksi Laravel</strong> (<code>DB::connection()->getPdo()</code>) dan tidak diperbolehkan menggantikannya dengan Eloquent ORM pada operasi CRUD utama.
+</p>
+<pre>
+// Mengambil instance PDO dari Laravel
+$pdo = DB::connection()->getPdo();
+
+// Query Prepared Statement dengan Named Parameter Binding
+$stmt = $pdo->prepare(
+    'SELECT p.*, a.nama_alat 
+     FROM peminjaman_alat AS p
+     JOIN alat AS a ON a.id = p.alat_id
+     WHERE p.kode_peminjaman LIKE :kode 
+        OR p.nama_peminjam LIKE :nama 
+        OR p.nomor_identitas LIKE :identitas'
+);
+$stmt->execute([
+    'kode' => '%' . $kataKunci . '%',
+    'nama' => '%' . $kataKunci . '%',
+    'identitas' => '%' . $kataKunci . '%',
+]);
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+</pre>
+<p>
+<strong>Keamanan yang Diimplementasikan:</strong>
+</p>
+<ol>
+  <li><strong>Pencegahan SQL Injection</strong>: Seluruh parameter masukan pengguna tidak pernah digabungkan secara langsung (<em>string concatenation</em>) ke dalam sintaks SQL, melainkan diikat menggunakan <em>parameter binding</em> pada <code>prepare()</code> dan <code>execute()</code>.</li>
+  <li><strong>Penanganan Eksepsi try-catch & report()</strong>: Setiap operasi basis data dibungkus dalam blok <code>try-catch</code>. Jika terjadi galat (<em>database exception</em>), fungsi <code>report($e)</code> dipanggil untuk mencatat rincian teknis pada file log server (<code>storage/logs/laravel.log</code>), sementara pengguna di antarmuka web hanya menerima pesan sederhana dan aman (misal: <em>"Terjadi kesalahan sistem saat memproses data."</em>) tanpa mengekspos kredensial, username, kata sandi, maupun struktur query internal.</li>
+  <li><strong>Proteksi Token CSRF</strong>: Semua form POST, PUT, dan DELETE dilengkapi direktif <code>@csrf</code> untuk menangkal serangan <em>Cross-Site Request Forgery</em>.</li>
+</ol>
+
+<h2>6. Pengolahan Masukan, Sanitasi, dan Validasi Server-Side</h2>
+<p>
+Sebelum dilakukan pengujian validasi, semua input teks disanitasi menggunakan fungsi bawaan PHP <code>trim()</code> untuk menghilangkan spasi tidak perlu di awal dan akhir teks, serta <code>strip_tags()</code> untuk mensterilkan potensi tag HTML berbahaya (XSS).
+</p>
+<p>
+Aturan validasi yang diterapkan pada <code>Validator::make()</code> meliputi:
+</p>
+<ul>
+  <li><code>kode_peminjaman</code>: Wajib diisi, tepat 10 karakter, alfanumerik tanpa spasi (<code>regex:/^[A-Za-z0-9]{10}$/</code>), dan unik di tabel <code>peminjaman_alat</code>.</li>
+  <li><code>nama_peminjam</code>: Wajib diisi, panjang antara 3 hingga 100 karakter.</li>
+  <li><code>nomor_identitas</code>: Wajib diisi, panjang antara 5 hingga 30 karakter, dan unik di tabel <code>peminjaman_alat</code>.</li>
+  <li><code>jumlah_alat</code>: Wajib diisi, berupa bilangan bulat (integer), dan bernilai antara 1 sampai 10.</li>
+  <li><code>alat_id</code>: Wajib dipilih dan dipastikan eksistensinya di tabel master <code>alat</code> melalui query verifikasi PDO.</li>
+  <li><strong>Persistensi Masukan</strong>: Jika validasi gagal, pengguna diarahkan kembali dengan <code>withErrors()</code> dan <code>withInput()</code> sehingga form otomatis mempertahankan input lama menggunakan pembantu <code>old()</code>.</li>
+</ul>
+
+<h2>7. Helper Function PHP: <code>statusJumlah()</code></h2>
+<p>
+Fungsi helper <code>statusJumlah()</code> dideklarasikan pada <code>app/Helpers/helpers.php</code> untuk mengklasifikasikan volume alat yang dipinjam:
+</p>
+<pre>
+if (!function_exists('statusJumlah')) {
+    function statusJumlah($jumlah_alat): string
+    {
+        $jumlah = (int) $jumlah_alat;
+        if ($jumlah >= 3) {
+            return 'Banyak';
+        }
+        return 'Sedikit';
+    }
+}
+</pre>
+<p>
+Fungsi ini dipanggil di dalam Blade pada setiap baris data tabel peminjaman: <code>{{ statusJumlah($peminjaman['jumlah_alat']) }}</code>. Pengecekan <code>!function_exists()</code> menjamin tidak terjadi tabrakan atau redeklarasi fungsi saat pemanggilan berulang.
+</p>
+
+<div class="page-break"></div>
+
+<h2>8. Laporan Hasil 10 Skenario Pengujian Sistem</h2>
+<p>
+Seluruh skenario pengujian yang diwajibkan dalam soal UTS telah dieksekusi secara nyata menggunakan automated test suite PHPUnit (<code>tests/Feature/PeminjamanTest.php</code>) serta pengujian interaktif langsung pada peramban web:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th width="5%">No</th>
+      <th width="15%">Fitur / Uji</th>
+      <th width="25%">Input / Aksi</th>
+      <th width="25%">Hasil yang Diharapkan</th>
+      <th width="20%">Hasil Aktual</th>
+      <th width="10%">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">1</td>
+      <td><strong>READ</strong></td>
+      <td>Akses <code>GET /peminjaman</code></td>
+      <td>3 data awal dan nama tabel master tampil pada indeks dengan status jumlah.</td>
+      <td>Tampil: PM00000001 (Rina Kurnia, Kamera, Sedikit), PM00000002 (Dedi Pranata, Proyektor, Sedikit), PM00000003 (Mira Ananda, Kamera, Banyak).</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">2</td>
+      <td><strong>CREATE Valid</strong></td>
+      <td><code>POST /peminjaman</code> (Kode: PM00000004, Nama: Fajar Nugraha, No ID: MHS-2201004, Jumlah: 4, Alat: 2)</td>
+      <td>Data tersimpan di basis data dan feedback sukses tampil.</td>
+      <td>Data masuk ke MariaDB, redirect 302, flash "Data peminjaman alat berhasil ditambahkan." tampil, baris baru muncul di tabel dengan status "Banyak".</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">3</td>
+      <td><strong>CREATE Tidak Valid</strong></td>
+      <td><code>POST /peminjaman</code> (Kode: PM01 [4 char], Nama: Al [2 char], Jumlah: 15, Alat: kosong)</td>
+      <td>Pesan kesalahan tampil dan input lama dipertahankan via <code>old()</code>.</td>
+      <td>Muncul daftar pesan error validasi server-side dan nilai lama tetap terisi pada form input.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">4</td>
+      <td><strong>Duplikat</strong></td>
+      <td><code>POST /peminjaman</code> (Kode: PM00000001 ATAU No ID: MHS-2201001)</td>
+      <td>Kode atau identitas yang sama ditolak tanpa merusak data yang ada.</td>
+      <td>Sistem menolak dengan pesan "Kode peminjaman sudah digunakan." atau "Nomor identitas sudah digunakan.". Data database utuh.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">5</td>
+      <td><strong>UPDATE Valid</strong></td>
+      <td>Buka form edit ID 1 lalu <code>PUT /peminjaman/1</code> (Ubah nama: Rina Kurnia Pratama, Jumlah: 5)</td>
+      <td>Data lama tampil pada form edit dan perubahan tersimpan.</td>
+      <td>Data lama terisi otomatis di form, perubahan tersimpan di DB, status jumlah berubah menjadi 'Banyak', feedback sukses tampil.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">6</td>
+      <td><strong>Konflik UPDATE</strong></td>
+      <td><code>PUT /peminjaman/2</code> mencoba memakai kode milik ID 1 (PM00000001)</td>
+      <td>Nilai unik milik data lain ditolak dan data tidak berubah.</td>
+      <td>Pembaruan ditolak dengan pesan "Kode peminjaman sudah digunakan oleh data lain.", record ID 2 tetap utuh.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">7</td>
+      <td><strong>DELETE</strong></td>
+      <td>Form <code>DELETE /peminjaman/{id}</code> dengan CSRF dan spoofing method</td>
+      <td>Data terpilih berhasil terhapus dari basis data.</td>
+      <td>Record terhapus permanen dari MariaDB, feedback "Data peminjaman alat berhasil dihapus." tampil di indeks.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">8</td>
+      <td><strong>Pencarian</strong></td>
+      <td><code>GET /peminjaman?q=Dedi</code> atau <code>q=PM00000003</code> atau <code>q=MHS-2201001</code></td>
+      <td>Kata kunci mencari pada kode, nama peminjam, dan nomor identitas secara aman.</td>
+      <td>Pencarian "Dedi" hanya menampilkan record Dedi Pranata. Pencarian "PM00000003" hanya menampilkan Mira Ananda.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">9</td>
+      <td><strong>Filter</strong></td>
+      <td><code>GET /peminjaman?alat_id=2</code></td>
+      <td>Hasil dibatasi hanya untuk peminjaman alat Proyektor.</td>
+      <td>Hanya transaksi peminjaman alat Proyektor yang ditampilkan di tabel, data alat Kamera terfilter keluar.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+    <tr>
+      <td align="center">10</td>
+      <td><strong>Error Handling</strong></td>
+      <td>Akses edit/delete ID yang tidak ada (<code>/peminjaman/99999/edit</code>)</td>
+      <td>Kesalahan query/data dicatat via <code>report()</code>, pengguna menerima pesan aman.</td>
+      <td>Dialihkan kembali dengan pesan aman "Data peminjaman tidak ditemukan.", tidak ada SQL error atau kebocoran kredensial.</td>
+      <td class="badge-pass" align="center">LULUS</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>9. Dokumentasi Tangkapan Layar (Screenshots) Aplikasi & Pengujian</h2>
+<p>Berikut adalah bukti tangkapan layar autentik dari aplikasi yang berjalan di lingkungan pengujian:</p>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/01_halaman_utama_read.png" alt="Halaman Utama Indeks">
+  <div class="img-caption">Gambar 9.1: Tampilan Halaman Utama (/peminjaman) memuat Form Tambah, Pencarian, Filter, dan Tabel 3 Data Awal Wajib.</div>
+</div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/04_create_sukses.png" alt="Create Sukses">
+  <div class="img-caption">Gambar 9.2: Pengujian CREATE Valid — Data baru PM00000004 berhasil ditambahkan dengan feedback notifikasi hijau.</div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/05_validasi_error.png" alt="Validasi Error">
+  <div class="img-caption">Gambar 9.3: Pengujian CREATE Tidak Valid — Penolakan input salah dengan daftar pesan kesalahan dan nilai lama dipertahankan.</div>
+</div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/06_duplikat_error.png" alt="Duplikat Ditolak">
+  <div class="img-caption">Gambar 9.4: Pengujian Duplikasi — Penolakan kode peminjaman yang sudah terdaftar tanpa merusak basis data.</div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/02_halaman_edit.png" alt="Halaman Edit">
+  <div class="img-caption">Gambar 9.5: Tampilan Form Edit (/peminjaman/1/edit) dengan nilai lama terisi pada field input.</div>
+</div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/03_pencarian_dan_filter.png" alt="Pencarian dan Filter">
+  <div class="img-caption">Gambar 9.6: Pengujian Pencarian & Filter Gabungan (Kata kunci 'Dedi' dan Filter 'Proyektor').</div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/07_terminal_mariadb.png" alt="Terminal MariaDB">
+  <div class="img-caption">Gambar 9.7: Eksekusi Terminal MariaDB — Struktur Tabel Master, Transaksi, dan 3 Data Awal Wajib.</div>
+</div>
+
+<div class="img-container">
+  <img src="/home/wh4mi/Dokumen/S5/selasa/ppw/uts/2401020121_ridho_ramadani_e/screenshots/08_terminal_phpunit.png" alt="Terminal PHPUnit">
+  <div class="img-caption">Gambar 9.8: Eksekusi Otomatis Test Suite PHPUnit — Seluruh 10 Skenario Pengujian LULUS (12 tests, 77 assertions).</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>10. Analisis Kendala, Perbaikan, dan GitHub Issue</h2>
+<p>
+Selama tahap pengembangan dan pengujian sistem, ditemukan sebuah kendala teknis pada validasi keunikan data saat operasi pembaruan (UPDATE):
+</p>
+<h3>Rincian Masalah (Issue Tracking)</h3>
+<ul>
+  <li><strong>Issue Title</strong>: Fix: Pengecekan Duplikat Kode Peminjaman dan Nomor Identitas Menolak Pembaruan Record Sendiri (Self-Collision)</li>
+  <li><strong>Langkah Pemeriksaan</strong>: Pengguna mencoba memperbarui atribut <code>nama_peminjam</code> atau <code>jumlah_alat</code> pada record ID 1 tanpa mengubah <code>kode_peminjaman</code>. Sistem secara keliru menolak pembaruan dengan pesan <em>"Kode peminjaman sudah digunakan."</em>.</li>
+  <li><strong>Penyebab Masalah</strong>: Query pengecekan duplikat pada <code>update()</code> controller tidak mengecualikan ID record yang sedang aktif diedit:
+    <pre>SELECT kode_peminjaman, nomor_identitas FROM peminjaman_alat WHERE kode_peminjaman = :kode OR nomor_identitas = :identitas</pre>
+    Query di atas menemukan baris data record itu sendiri sehingga dianggap bentrok.
+  </li>
+  <li><strong>Perbaikan yang Dilakukan</strong>: Menambahkan klausul pengecualian <code>AND id <> :id</code> pada query prepared statement:
+    <pre>SELECT kode_peminjaman, nomor_identitas 
+FROM peminjaman_alat 
+WHERE (kode_peminjaman = :kode OR nomor_identitas = :identitas) 
+  AND id <> :id LIMIT 1</pre>
+  </li>
+  <li><strong>Hasil Pengujian Ulang</strong>: Record ID 1 berhasil diperbarui dengan tetap mempertahankan kode dan identitasnya, sementara jika dicoba memasukkan kode milik record lain, sistem secara tepat menolak konflik data tersebut.</li>
+</ul>
+
+<h2>11. Riwayat Git Commit Terstruktur</h2>
+<p>
+Proyek dikelola menggunakan Git dengan 6 commit terstruktur yang mencerminkan tahapan pengembangan dari awal hingga pengujian:
+</p>
+<pre>
+* commit 6: test: menambahkan 10 skenario pengujian phpunit dan dokumentasi
+* commit 5: feat: implementasi fitur update delete pencarian dan filter
+* commit 4: feat: implementasi pdo controller dan fitur create read
+* commit 3: feat: implementasi helper fungsi statusJumlah, routing web, dan konfigurasi pdo
+* commit 2: feat: membuat database, migration, dan data awal sql
+* commit 1: feat: inisialisasi proyek laravel dan konfigurasi dasar
+</pre>
+<p>
+<strong>Catatan Repositori & Keamanan Konfigurasi:</strong> File konfigurasi rahasia <code>.env</code> diproteksi secara ketat melalui <code>.gitignore</code> dan tidak pernah dimasukkan ke dalam commit Git. Template environment yang aman disediakan melalui berkas <code>.env.example</code>. Akses GitHub CLI pada mesin kerja saat ini dalam status lokal (<em>offline / unauthenticated</em>), sehingga riwayat Git dikelola secara lokal pada direktori <code>.git</code> proyek.
+</p>
+
+<h2>12. Kesimpulan</h2>
+<p>
+Aplikasi <strong>Sistem Peminjaman Alat Laboratorium</strong> (Paket 2 Tipe B) telah berhasil diselesaikan dengan memenuhi seluruh kriteria dan spesifikasi yang ditetapkan oleh tim dosen pengampu:
+</p>
+<ol>
+  <li>Arsitektur basis data relasional MariaDB terdiri dari tepat 2 tabel (<code>alat</code> dan <code>peminjaman_alat</code>) yang dilengkapi kunci utama (PK), kunci tamu (FK) berelasi <em>one-to-many</em>, batasan <code>CHECK (jumlah_alat BETWEEN 1 AND 10)</code>, <code>UNIQUE</code>, <code>NOT NULL</code>, <code>ON UPDATE CASCADE</code>, dan <code>ON DELETE RESTRICT</code>.</li>
+  <li>Seluruh operasi CRUD, pencarian, dan filter dieksekusi 100% menggunakan <strong>PDO murni (Prepared Statements)</strong> dengan parameter binding tanpa ORM Eloquent pada transaksi inti.</li>
+  <li>Validasi server-side, sanitasi string (<code>trim</code> dan <code>strip_tags</code>), token proteksi <code>@csrf</code>, dan penanganan input lama (<code>old()</code>) berfungsi sempurna.</li>
+  <li>Fungsi helper PHP <code>statusJumlah()</code> berhasil menyajikan status klasifikasi jumlah dinamis pada Blade tanpa konflik redeklarasi.</li>
+  <li>Seluruh tampilan dibangun secara taat instruksi menggunakan <strong>Blade dan HTML murni tanpa CSS maupun JavaScript eksternal</strong>.</li>
+  <li>Seluruh <strong>10 skenario pengujian telah lulus 100%</strong> melalui automated testing PHPUnit dan uji antarmuka nyata.</li>
+</ol>
+<br>
+<table style="width: 100%; border: none; margin-top: 20pt;">
+  <tr>
+    <td style="border: none; width: 60%;"></td>
+    <td style="border: none; text-align: center;">
+      Tanjungpinang, 03 November 2026<br>
+      Mahasiswa Praktikan,<br><br><br><br>
+      <strong><u>Ridho Ramadani</u></strong><br>
+      NIM. 2401020121
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
